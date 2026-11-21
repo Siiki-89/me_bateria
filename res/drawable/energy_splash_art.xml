@@ -1,0 +1,14 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="288dp" android:height="288dp"
+    android:viewportWidth="288" android:viewportHeight="288">
+    <path android:pathData="M109.21,146.28 A43,43 0,1 1,178.79 146.28"
+        android:strokeColor="#33474D" android:strokeWidth="2.6" />
+    <path android:name="charge" android:pathData="M109.21,146.28 A43,43 0,1 1,178.79 146.28"
+        android:strokeColor="#76DFD3" android:strokeWidth="2.6" />
+    <group android:translateX="144" android:translateY="121" android:scaleX="0.245" android:scaleY="0.245">
+        <path android:fillColor="#33B9BF" android:pathData="M-135,0a135,135 0,1 1,270 0a135,135 0,1 1,-270 0Z" />
+        <path android:fillColor="#161D25" android:fillType="evenOdd" android:pathData="@string/me_monogram_path" />
+    </group>
+    <path android:name="name" android:fillColor="#EFF7F6" android:fillType="evenOdd"
+        android:pathData="@string/splash_wordmark_path" />
+</vector>

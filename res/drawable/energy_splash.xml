@@ -1,0 +1,5 @@
+<animated-vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:drawable="@drawable/energy_splash_art">
+    <target android:name="charge" android:animation="@animator/trace_charge" />
+    <target android:name="name" android:animation="@animator/reveal_name" />
+</animated-vector>

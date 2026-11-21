@@ -1,0 +1,10 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp" android:height="108dp"
+    android:viewportWidth="108" android:viewportHeight="108">
+    <path android:strokeColor="#76DFD3" android:strokeWidth="2.1"
+        android:pathData="M27.3,73.4 A33,33 0,1 1,80.7 73.4" />
+    <group android:translateX="54" android:translateY="54" android:scaleX="0.2" android:scaleY="0.2">
+        <path android:fillColor="#33B9BF" android:pathData="M-135,0a135,135 0,1 1,270 0a135,135 0,1 1,-270 0Z" />
+        <path android:fillColor="#161D25" android:fillType="evenOdd" android:pathData="@string/me_monogram_path" />
+    </group>
+</vector>
