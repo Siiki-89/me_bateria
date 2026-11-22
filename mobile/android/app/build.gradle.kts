@@ -13,7 +13,7 @@ if (signingFile.exists()) signingFile.inputStream().use { appKeys.load(it) }
 android {
     namespace = "br.com.memotos.bateria"
     sourceSets.getByName("main").res.srcDir(rootProject.file("../../res"))
-    compileSdk = flutter.compileSdkVersion
+    compileSdk = 37
     ndkVersion = flutter.ndkVersion
 
     compileOptions {
