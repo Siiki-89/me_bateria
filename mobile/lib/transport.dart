@@ -181,14 +181,10 @@ class _BatteryLink {
 
   bool _matches(DiscoveredDevice device) {
     if (device.id.toUpperCase() == id) return true;
-    // Both platforms retain the 2-byte Company Identifier in manufacturerData.
-    // CoreBluetooth's device.id is an opaque UUID, never the label's MAC.
-    final bytes = device.manufacturerData;
-    if (bytes.length < 8) return false;
-    for (var i = 0; i < _addressBytes.length; i++) {
-      if (bytes[i + 2] != _addressBytes[i]) return false;
-    }
-    return true;
+    return matchesBatteryManufacturerData(
+      device.manufacturerData,
+      _addressBytes,
+    );
   }
 
   Future<void> _connectDevice(DiscoveredDevice device) async {
@@ -371,4 +367,18 @@ class _BleProblem implements Exception {
   final String message;
   @override
   String toString() => message;
+}
+
+bool matchesBatteryManufacturerData(List<int> bytes, List<int> address) {
+  if (address.length != 6) return false;
+  // JBD advertisements can start with the label or a two-byte company ID.
+  for (final offset in const [0, 2]) {
+    if (bytes.length < offset + address.length) continue;
+    var i = 0;
+    while (i < address.length && bytes[offset + i] == address[i]) {
+      i++;
+    }
+    if (i == address.length) return true;
+  }
+  return false;
 }
